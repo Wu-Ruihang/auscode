@@ -1,0 +1,57 @@
+body {
+    background-image: url(../index_photo_gallery/wood.jpg);
+    color: white;
+}
+  
+.iframe_php{
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+    border: none;
+}
+  
+.iframe_main_menu{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    border: none;
+}
+h1 {
+    color: rgb(181, 126, 220);
+    font-size: 70px;
+    margin:  0;
+    padding: 0;
+}
+  
+ul {
+    list-style-type: none;
+    margin:  0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: space-between;
+}
+li {
+    flex-grow: 1;
+}
+li a {
+    display: block;
+    color: #333;
+    text-align: center;
+    padding: 16px 16px;
+    text-decoration: none;
+}
+li a:hover {
+    background-color: #c298eb;
+}
+  
+p {
+    color: #bb00ff;
+    font-size: 40px;
+}
+  
+a {
+    color: rgb(174, 0, 255);
+    font-size: 40px;
+}

@@ -1,0 +1,10 @@
+body {
+    background-image: url(../../../index_photo_gallery/wood.jpg);
+    color: rgb(85, 0, 255);
+}
+
+a {
+    color: rgb(121, 27, 188);
+    font-size: 40px;
+    text-decoration: none;
+}

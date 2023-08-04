@@ -1,0 +1,17 @@
+body {
+    background-image: url(../../../index_photo_gallery/wood.jpg);
+    color: white;
+}
+
+h1 {
+    color: rgb(0, 102, 255);
+    font-size: 70px;
+    margin:  0;
+    padding: 0;
+}
+
+a {
+    color: rgb(0, 102, 255);
+    font-size: 40px;
+    text-decoration: none;
+}

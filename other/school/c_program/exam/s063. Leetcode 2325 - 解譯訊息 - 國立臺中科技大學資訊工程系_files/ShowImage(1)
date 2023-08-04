@@ -1,0 +1,932 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+
+
+
+
+
+<!-- <Bootstrap CDN>  -->
+
+<!-- 
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> 
+ -->
+<link rel="stylesheet"
+	href="jscripts/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+
+<!-- 
+<link href="https://scottdorman.github.io/bootstrap-flat/dist/css/bootstrap-flat.min.css" rel="stylesheet">
+ -->
+<link rel="stylesheet"
+	href="jscripts/bootstrap-flat-3.3.4-dist/bootstrap-flat.min.css">
+
+<!-- 
+<link
+	href="https://scottdorman.github.io/bootstrap-flat/dist/css/bootstrap-flat-extras.min.css"
+	rel="stylesheet">
+ -->
+<link rel="stylesheet"
+	href="jscripts/bootstrap-flat-3.3.4-dist/bootstrap-flat-extras.min.css">
+
+<!-- 
+<link
+	href="https://scottdorman.github.io/bootstrap-flat/dist/css/font-awesome.min.css"
+	rel="stylesheet">
+-->
+<link rel="stylesheet"
+	href="jscripts/font-awesome-4.7.0/css/font-awesome.min.css">
+
+<!-- 
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap3-dialog/1.34.7/css/bootstrap-dialog.min.css" rel="stylesheet">
+ -->
+<link rel="stylesheet"
+	href="jscripts/bootstrap3-dialog/bootstrap-dialog.min.css">
+
+<!-- 
+<link rel="stylesheet"
+	href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/default.min.css">
+ -->
+<link rel="stylesheet" href="jscripts/highlight.js/default.min.css">
+
+<!-- </Bootstrap CDN>  -->
+
+
+<link href="jscripts/bootstrap-flat-3.3.4-dist/docs.min.css"
+	rel="stylesheet">
+<link href="jscripts/bootstrap-flat-3.3.4-dist/docs-flat.css"
+	rel="stylesheet">
+
+
+<!-- <script
+	src=https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js></script>
+ -->
+<script src="jscripts/jquery-1.11.3.min.js"></script>
+
+
+<script type="text/javascript"
+	src="./jscripts/jquery.timeout.interval.idle.js"></script>
+
+<!-- 最新編譯和最佳化的 JavaScript -->
+<!-- <link rel="stylesheet"
+    href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+ -->
+<!-- <script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+ -->
+<script src="jscripts/jquery-ui-1.11.4/jquery-ui.js"></script>
+
+<!-- <script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+ -->
+<script src="jscripts/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+
+
+<!-- <script
+	src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap3-dialog/1.34.7/js/bootstrap-dialog.min.js"></script>
+ -->
+<script src="jscripts/bootstrap3-dialog/bootstrap-dialog.min.js"></script>
+
+
+
+<!-- <script
+	src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+ -->
+<script src="jscripts/highlight.js/highlight.min.js"></script>
+
+
+<!-- stackable modal 的模組
+ -->
+<script type="text/javascript"
+	src="include/Modals/Modal_confirm.js?191126"></script>
+
+<!-- <link href="css/navbar.css" rel=stylesheet> -->
+<script type="text/javascript">
+	jQuery(document).ready(function() {
+		$("input").eq(1).focus();
+		$('.modal').on('shown.bs.modal', function() {
+			$(this).focus()
+		})
+		$('pre#code').each(function(i, block) {
+			hljs.highlightBlock(block);
+		});
+	});
+
+	jQuery(document).ajaxError(function(event, jqXHR, settings, thrownError) {
+		console.log(".ajaxError 進行全域捕捉 error:");
+		console.log("event=" + event);
+		//console.log("jqxhr.responseText=" + jqXHR.responseText);
+		//console.log("settings.url=" + settings.url);
+		//console.log("thrownError=" + thrownError);
+	});
+</script>
+<style type="text/css">
+span#acstyle {
+	color: #00BB00;
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+}
+
+.acstyle {
+	color: #00BB00;
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+}
+</style>
+<meta charset="UTF-8">
+<title>國立臺中科技大學資訊工程系</title>
+
+
+
+<script type="text/javascript"
+	src="jscripts/jquery.timeout.interval.idle.js"></script>
+<script type="text/javascript"
+	src="ShowContest.js?191126"></script>
+<script type="text/javascript"
+	src="Contests.js?191126"></script>
+
+</head>
+<body>
+	
+
+
+
+
+
+
+
+<style type="text/css">
+body {
+	padding-top: 60px;
+}
+
+.navbar-center {
+	display: inline-block;
+	float: none;
+	vertical-align: top;
+}
+
+.navbar-collapse-center {
+	text-align: center;
+}
+
+.dropdown-submenu {
+	position: relative;
+}
+
+.dropdown-submenu>.dropdown-menu {
+	top: 0;
+	left: 100%;
+	margin-top: -6px;
+	margin-left: -1px;
+	-webkit-border-radius: 0 6px 6px 6px;
+	-moz-border-radius: 0 6px 6px;
+	border-radius: 0 6px 6px 6px;
+}
+
+.dropdown-submenu:hover>.dropdown-menu {
+	display: block;
+}
+
+.dropdown-submenu>a:after {
+	display: block;
+	content: " ";
+	float: right;
+	width: 0;
+	height: 0;
+	border-color: transparent;
+	border-style: solid;
+	border-width: 5px 0 5px 5px;
+	border-left-color: #ccc;
+	margin-top: 5px;
+	margin-right: -10px;
+}
+
+.dropdown-submenu:hover>a:after {
+	border-left-color: #fff;
+}
+
+.dropdown-submenu.pull-left {
+	float: none;
+}
+
+.dropdown-submenu.pull-left>.dropdown-menu {
+	left: -100%;
+	margin-left: 10px;
+	-webkit-border-radius: 6px 0 6px 6px;
+	-moz-border-radius: 6px 0 6px 6px;
+	border-radius: 6px 0 6px 6px;
+}
+
+pre {
+	border: 0;
+	background-color: transparent;
+	margin: 0 0 0px;
+	padding: 0px;
+	white-space: pre-wrap;
+	word-break: normal;
+}
+</style>
+<script type="text/javascript" src="include/div/ZeroJudge_Navbar.js"></script>
+
+
+
+
+
+
+
+
+<div class="modal fade" id="Modal_SetUserPassword" role="dialog"
+	tabindex="-1" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="myModalLabel">解除綁定，重新設定系統帳號的密碼</h4>
+			</div>
+			<div class="modal-body">
+
+				<form class="form-horizontal">
+					<div class="form-group">
+						<label for="tname" class="col-sm-3 control-label">您的系統帳號 ID：</label>
+						<div class="col-sm-9">
+							<input class="form-control" id="disabledInput" type="text"
+								placeholder="" disabled>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="tname" class="col-sm-3 control-label">您的系統帳號：</label>
+						<div class="col-sm-9">
+							<input class="form-control" id="disabledInput" type="text"
+								placeholder="" disabled>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="tname" class="col-sm-3 control-label">您的帳號暱稱：</label>
+						<div class="col-sm-9">
+							<input class="form-control" id="disabledInput" type="text"
+								placeholder="" disabled>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="tname" class="col-sm-3 control-label">設定新密碼：</label>
+						<div class="col-sm-9">
+							<input type="password" class="form-control" name="UserPassword1"
+								placeholder="設定新密碼" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="tname" class="col-sm-3 control-label">設定新密碼：</label>
+						<div class="col-sm-9">
+							<input type="password" class="form-control" name="UserPassword2"
+								placeholder="再打一次新密碼" value="">
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				<button type="button" class="btn btn-primary"
+					id="modal_setUserPassword_submit" data-action="UnbindGoogle"
+					data-userid="">設定</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="modal fade" id="Modal_JoinVclassid" tabindex="-1"
+	role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="myModalLabel">請輸入要加入的「課程代碼」</h4>
+			</div>
+			<div class="modal-body">
+				<form class="form-horizontal">
+					<div class="form-group">
+						<div class="col-sm-12">
+							<label for="tname">請向開設課程的使用者索取「課程代碼」 </label><input type="text"
+								class="form-control" id="tname" name="vclasscode"
+								placeholder="請輸入「課程代碼」：" value="">
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary"
+					id="Modal_JoinVclassid_submit">加入課程</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+	
+
+
+
+
+
+
+<style>
+<!-- /* navbar */
+.navbar-default {
+	/* background-color: #F8F8F8; */
+	/*background-color: rgba(51, 122, 183, 1);*/
+	/*background-color: #A8BDDB;*/ /* 原 ZeroJudge 色*/
+	background-color: #8ca3c3;
+	border-color: #E7E7E7;
+	font-size: 18px;
+}
+/* title */
+.navbar-default .navbar-brand {
+	color: #777;
+}
+
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus
+	{
+	color: #5E5E5E;
+}
+/* link */
+.navbar-default .navbar-nav>li>a {
+	/* color: #777; */
+	color: #FFFFFF; /*qx*/
+}
+
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus
+	{
+	color: #333;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover,
+	.navbar-default .navbar-nav>.active>a:focus {
+	/* color: #555; */
+	color: #FFFFFF;
+	background-color: #E7E7E7;
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover,
+	.navbar-default .navbar-nav>.open>a:focus {
+	/* color: #555; */
+	color: #FFFFFF;
+	background-color: #D5D5D5;
+}
+/* caret */
+.navbar-default .navbar-nav>.dropdown>a .caret {
+	border-top-color: #777;
+	border-bottom-color: #777;
+}
+
+.navbar-default .navbar-nav>.dropdown>a:hover .caret, .navbar-default .navbar-nav>.dropdown>a:focus .caret
+	{
+	border-top-color: #333;
+	border-bottom-color: #333;
+}
+
+.navbar-default .navbar-nav>.open>a .caret, .navbar-default .navbar-nav>.open>a:hover .caret,
+	.navbar-default .navbar-nav>.open>a:focus .caret {
+	border-top-color: #555;
+	border-bottom-color: #555;
+}
+/* mobile version */
+.navbar-default .navbar-toggle {
+	border-color: #DDD;
+}
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus
+	{
+	background-color: #DDD;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+	background-color: #CCC;
+}
+
+@media ( max-width : 767px) {
+	.navbar-default .navbar-nav .open .dropdown-menu>li>a {
+		color: #777;
+	}
+	.navbar-default .navbar-nav .open .dropdown-menu>li>a:hover,
+		.navbar-default .navbar-nav .open .dropdown-menu>li>a:focus {
+		color: #333;
+	}
+}
+
+.vcenter {
+	display: inline-block;
+	vertical-align: middle;
+	/*float: none;*/
+}
+
+/* .navbar-brand {
+	padding-top: 8px;
+	height: 40px;
+}
+ */
+-->
+.truncate {
+	width: 100px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+</style>
+<div class="container-fluid">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="./"> <img
+			src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KIDwhLS0gQ3JlYXRlZCB3aXRoIE1ldGhvZCBEcmF3IC0gaHR0cDovL2dpdGh1Yi5jb20vZHVvcGl4ZWwvTWV0aG9kLURyYXcvIC0tPgogPGc+CiAgPHRpdGxlPmJhY2tncm91bmQ8L3RpdGxlPgogIDxyZWN0IGZpbGw9Im5vbmUiIGlkPSJjYW52YXNfYmFja2dyb3VuZCIgaGVpZ2h0PSIxMDIiIHdpZHRoPSIxNTIiIHk9Ii0xIiB4PSItMSIvPgogIDxnIGRpc3BsYXk9Im5vbmUiIG92ZXJmbG93PSJ2aXNpYmxlIiB5PSIwIiB4PSIwIiBoZWlnaHQ9IjEwMCUiIHdpZHRoPSIxMDAlIiBpZD0iY2FudmFzR3JpZCI+CiAgIDxyZWN0IGZpbGw9InVybCgjZ3JpZHBhdHRlcm4pIiBzdHJva2Utd2lkdGg9IjAiIHk9IjAiIHg9IjAiIGhlaWdodD0iMTAwJSIgd2lkdGg9IjEwMCUiLz4KICA8L2c+CiA8L2c+CiA8Zz4KICA8dGl0bGU+TGF5ZXIgMTwvdGl0bGU+CiAgPHRleHQgZm9udC13ZWlnaHQ9ImJvbGQiIHN0cm9rZT0iIzAwMCIgdHJhbnNmb3JtPSJtYXRyaXgoMSwwLDAsMS4wMzcwMzcwMTQ5NjEyNDI3LDAsLTAuMjAxOTY3NDcyMjEwNTI2NDcpICIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgdGV4dC1hbmNob3I9InN0YXJ0IiBmb250LWZhbWlseT0iSGVsdmV0aWNhLCBBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyNCIgaWQ9InN2Z18xIiB5PSI0My44NDU5ODIiIHg9IjM3LjUiIHN0cm9rZS13aWR0aD0iMCIgZmlsbD0iI2ZmZmZmZiI+TlVUQzwvdGV4dD4KICA8dGV4dCBzdHJva2U9IiMwMDAiIHRyYW5zZm9ybT0ibWF0cml4KDEuMjY5NjEwMjIwNDM4MjM4NSwwLDAsMS43OTU1NTI3MzE0MTcxMDM2LC0wLjkyOTMwMzk5MjQ0NjcxOTUsLTQ3LjYxMjk5MjU4ODg1MzE2KSAiIHhtbDpzcGFjZT0icHJlc2VydmUiIHRleHQtYW5jaG9yPSJzdGFydCIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIFRpbWVzLCAnVGltZXMgTmV3IFJvbWFuJywgc2VyaWYiIGZvbnQtc2l6ZT0iMTAiIGlkPSJzdmdfMiIgeT0iNjkuMjU4NzY3IiB4PSIxMi44MDExNDciIGZpbGwtb3BhY2l0eT0ibnVsbCIgc3Ryb2tlLW9wYWNpdHk9Im51bGwiIHN0cm9rZS13aWR0aD0iMCIgZmlsbD0iIzAwMDAwMCI+Q29tcHV0ZXIgU2NpZW5jZSAmYW1wOzwvdGV4dD4KICA8dGV4dCBzdHJva2U9IiMwMDAiIHRyYW5zZm9ybT0ibWF0cml4KDEuMzI5MDMyNDYwNjM5Nzk2NSwwLDAsMS41Nzg0ODUxMzEyNjM3MzMxLC0xLjcyMjUwNTMxOTY1OTg0NjMsLTMzLjM4MTc3MDY4NzE3Nzc5KSAiIHhtbDpzcGFjZT0icHJlc2VydmUiIHRleHQtYW5jaG9yPSJzdGFydCIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIFRpbWVzLCAnVGltZXMgTmV3IFJvbWFuJywgc2VyaWYiIGZvbnQtc2l6ZT0iMTAiIGlkPSJzdmdfNCIgeT0iODEuOTg3MiIgeD0iMS44MTUwMTIiIGZpbGwtb3BhY2l0eT0ibnVsbCIgc3Ryb2tlLW9wYWNpdHk9Im51bGwiIHN0cm9rZS13aWR0aD0iMCIgZmlsbD0iIzAwMDAwMCI+SW5mb3JtYXRpb24gRW5naW5lZXJpbmc8L3RleHQ+CiA8L2c+Cjwvc3ZnPg==" style="width: 5em;" />
+		</a>
+	</div>
+	<!-- Brand and toggle get grouped for better mobile display -->
+
+	<!-- Collect the nav links, forms, and other content for toggling -->
+	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		<ul class="nav navbar-nav">
+			<li><a href="./Problems"> 分類題庫
+			</a></li>
+			<li><a href="./Submissions"> 解題動態
+			</a></li>
+			<li><a href="./Ranking"> 排行榜
+			</a></li>
+			<li><a href="./Forum"> 討論區
+			</a></li>
+			<li><a href="./Contests"> 競賽區
+			</a></li>
+		</ul>
+		<form name="form1" class="navbar-form navbar-center" role="search"
+			method="POST" action="./Problems">
+			<div class="input-group">
+				<input type="text" class="form-control" placeholder="搜尋題目關鍵字、題號..."
+					name="searchword"> <span class="input-group-btn">
+					<button class="btn btn-default" type="submit">
+						<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+					</button>
+				</span>
+			</div>
+		</form>
+
+		<ul class="nav navbar-nav navbar-right">
+			
+			
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+			
+			
+				
+				
+					<li><a href="./Login"> 登入
+					</a></li>
+					<li><a href="./InsertUser"> 註冊
+					</a></li>
+				
+			
+			<li><a href="./"><span class="glyphicon glyphicon-home"
+					aria-hidden="true"></span></a></li>
+			<li>
+		</ul>
+	</div>
+	<!-- /.navbar-collapse -->
+</div>
+<!-- /.container-fluid -->
+
+</nav>
+<br>
+<br>
+
+
+	<div class="container">
+		<div class="row">
+			
+			
+
+
+			
+			
+			<br />
+			<hr />
+			<h2>
+				已結束的競賽
+			</h2>
+			<br />
+			<table class="table table-hover">
+				<tr>
+					<td class="col-md-3">主辦人</td>
+					<td class="col-md-6">說明</td>
+					<td class="col-md-2">開始時間</td>
+					<td class="col-md-1">競賽狀態</td>
+				</tr>
+				
+					<tr>
+						<td> 
+
+
+
+
+
+
+	<div style="display: inline-block;">
+		
+		<span> <a href="./UserStatistic?id=3"
+			title="sychen">sychen</a>
+		</span> <span title="管理員(sychen)">(管理員(sychen))
+		</span>
+		
+	</div>
+	
+
+
+
+
+</td>
+						<td>
+								
+									<a href="./ShowContest?contestid=14">110資三甲第八週練習</a>
+								
+								
+							 <span style="font-size: smaller">[48]</span></td>
+						<td>
+							<div style="font-size: smaller">
+								2021-11-04 09:52
+							</div>
+						</td>
+						<td>已結束
+						</td>
+					</tr>
+				
+					<tr>
+						<td> 
+
+
+
+
+
+
+	<div style="display: inline-block;">
+		
+		<span> <a href="./UserStatistic?id=3"
+			title="sychen">sychen</a>
+		</span> <span title="管理員(sychen)">(管理員(sychen))
+		</span>
+		
+	</div>
+	
+
+
+
+
+</td>
+						<td>
+								
+									<a href="./ShowContest?contestid=13">110資三甲第七週練習</a>
+								
+								
+							 <span style="font-size: smaller">[43]</span></td>
+						<td>
+							<div style="font-size: smaller">
+								2021-10-28 10:14
+							</div>
+						</td>
+						<td>已結束
+						</td>
+					</tr>
+				
+					<tr>
+						<td> 
+
+
+
+
+
+
+	<div style="display: inline-block;">
+		
+		<span> <a href="./UserStatistic?id=3"
+			title="sychen">sychen</a>
+		</span> <span title="管理員(sychen)">(管理員(sychen))
+		</span>
+		
+	</div>
+	
+
+
+
+
+</td>
+						<td>
+								
+								
+			110程式能力檢測(2)
+			
+							 <span style="font-size: smaller">[1]</span></td>
+						<td>
+							<div style="font-size: smaller">
+								2021-07-01 18:00
+							</div>
+						</td>
+						<td>已結束
+						</td>
+					</tr>
+				
+					<tr>
+						<td> 
+
+
+
+
+
+
+	<div style="display: inline-block;">
+		
+		<span> <a href="./UserStatistic?id=3"
+			title="sychen">sychen</a>
+		</span> <span title="管理員(sychen)">(管理員(sychen))
+		</span>
+		
+	</div>
+	
+
+
+
+
+</td>
+						<td>
+								
+								
+			110年度程式能力檢測
+			
+							 <span style="font-size: smaller">[14]</span></td>
+						<td>
+							<div style="font-size: smaller">
+								2021-07-01 09:00
+							</div>
+						</td>
+						<td>已結束
+						</td>
+					</tr>
+				
+					<tr>
+						<td> 
+
+
+
+
+
+
+	<div style="display: inline-block;">
+		
+		<span> <a href="./UserStatistic?id=3"
+			title="sychen">sychen</a>
+		</span> <span title="管理員(sychen)">(管理員(sychen))
+		</span>
+		
+	</div>
+	
+
+
+
+
+</td>
+						<td>
+								
+								
+			test
+			
+							 <span style="font-size: smaller">[2]</span></td>
+						<td>
+							<div style="font-size: smaller">
+								2021-06-29 01:21
+							</div>
+						</td>
+						<td>已結束
+						</td>
+					</tr>
+				
+					<tr>
+						<td> 
+
+
+
+
+
+
+	<div style="display: inline-block;">
+		
+		<span> <a href="./UserStatistic?id=3"
+			title="sychen">sychen</a>
+		</span> <span title="管理員(sychen)">(管理員(sychen))
+		</span>
+		
+	</div>
+	
+
+
+
+
+</td>
+						<td>
+								
+								
+			109年程式能力檢測
+			
+							 <span style="font-size: smaller">[1]</span></td>
+						<td>
+							<div style="font-size: smaller">
+								2020-07-28 09:01
+							</div>
+						</td>
+						<td>已結束
+						</td>
+					</tr>
+				
+					<tr>
+						<td> 
+
+
+
+
+
+
+	<div style="display: inline-block;">
+		
+		<span> <a href="./UserStatistic?id=3"
+			title="sychen">sychen</a>
+		</span> <span title="管理員(sychen)">(管理員(sychen))
+		</span>
+		
+	</div>
+	
+
+
+
+
+</td>
+						<td>
+								
+								
+			檢測
+			
+							 <span style="font-size: smaller">[1]</span></td>
+						<td>
+							<div style="font-size: smaller">
+								2020-07-28 01:50
+							</div>
+						</td>
+						<td>已結束
+						</td>
+					</tr>
+				
+					<tr>
+						<td> 
+
+
+
+
+
+
+	<div style="display: inline-block;">
+		
+		<span> <a href="./UserStatistic?id=1"
+			title="zero">zero</a>
+		</span> <span title="管理員">(管理員)
+		</span>
+		
+	</div>
+	
+
+
+
+
+</td>
+						<td>
+								
+								
+			測試
+			
+							 <span style="font-size: smaller">[0]</span></td>
+						<td>
+							<div style="font-size: smaller">
+								2020-07-27 23:31
+							</div>
+						</td>
+						<td>已結束
+						</td>
+					</tr>
+				
+			</table>
+			
+			<br />
+			
+
+
+
+
+
+
+
+<!--         <div
+            style="width: 70; margin: auto; vertical-align: top; margin-left: auto; margin-right: auto;">
+ -->
+
+<div id="pagging" style="padding: 10px;">
+	
+		
+			
+		
+		
+	
+	
+	
+	
+		
+		
+			第一頁
+		
+	
+	|
+	
+		
+		
+			《- 上一頁
+		
+	
+	|
+	第 1 頁
+	|
+	
+		
+			<a href="?page=2&"
+				title="lastpage=">下一頁</a>
+		
+		
+	
+	-》
+	
+
+	
+</div>
+
+			<br />
+		</div>
+	</div>
+	
+
+
+
+
+
+
+
+<!-- <blockquote class="blockquote-reverse">
+ -->
+<hr>
+<footer class="small pull-right">
+
+	<div>
+		
+		162/6118 MB (2.6%)
+		|
+		
+			<span>12ms</span>
+		
+		| 21 人上線 |
+		Queue:0
+	</div>
+	<div>
+		Powered by <a href="http://zerojudge.tw/" target="_blank">ZeroJudge</a>
+		3.3
+		server:3.3 |
+		191126 |
+	</div>
+</footer>
+<!-- </blockquote>
+ -->
+
+</body>
+</html>
